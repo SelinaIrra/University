@@ -1,0 +1,338 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title> task1 </title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body class="background_zig_zag">
+<div class="container">
+    <header>
+        <div><img src="images/diamond.png"></div>
+        <div class="flex-menu">
+            <a href="index.html" class="menu-item"> О себе </a>
+            <a href="photo.html" class="menu-item"> Галерея </a>
+            <a href="#" id="menu" class="menu-item"> Тема </a>
+        </div>
+    </header>
+    <div class="settings">
+        <div style="width: inherit; text-align: right;">
+            <button class="btn_close"> [x]</button>
+        </div>
+        <div class='grid'>
+            <span> Стиль шрифта: </span>
+            <div id='font'>
+                <select>
+                    <option value="Georgia"> Georgia</option>
+                    <option value="Arial"> Arial</option>
+                    <option value="'Arial Black'"> Arial Black</option>
+                    <option value="'Comic Sans MS'"> Comic Sans MS</option>
+                    <option value="'Courier New'"> Courier New</option>
+                    <option value="'Times New Roman'"> Times New Roman</option>
+                    <option value="'Trebuchet MS'"> Trebuchet MS</option>
+                    <option value="Impact"> Impact</option>
+                    <option value="Verdana"> Verdana</option>
+                </select>
+            </div>
+            <span> Стиль фона: </span>
+            <div id='background'>
+                <select>
+                    <option value="background_zig_zag"> Зигзаг</option>
+                    <option value="background_vertical_line"> Вертикальные линии</option>
+                    <option value="background_horizontal_line"> Горизонтальные линии</option>
+                    <option value="background_inclined_line"> Косые линии</option>
+                    <option value="background_rombus"> Ромб</option>
+                    <option value="background_small_rect"> Мини-квадрат</option>
+                    <option value="background_big_rect"> Квадрат</option>
+                    <option value="background_small_dots"> Мелкий горох</option>
+                    <option value="background_big_dots"> Крупный горох</option>
+                </select>
+            </div>
+            <span> Цвет фона №1: </span>
+            <div>
+                <input type="color" value="#000000" name="color1" oninput="setBackgroundColor()">
+            </div>
+            <span> Цвет фона №2: </span>
+            <div>
+                <input type="color" value="#ffffff" name="color2" oninput="setBackgroundColor()">
+            </div>
+            <span> Цвет меню: </span>
+            <div>
+                <input type="color" value="#1e1e1e" name="headerColor" oninput="setHeaderColor()">
+            </div>
+            <span> Рамка: </span>
+            <div id='borderImg'>
+                <select onclick="setBorderImg()">
+                    <option value="none"> -</option>
+                    <option value="solid"> Solid</option>
+                    <option value="dotted"> Dot</option>
+                    <option value="dashed"> Dash</option>
+                    <option value="double"> Double</option>
+                    <option value="groove"> Groove</option>
+                    <option value="inset"> Inset</option>
+                    <option value="outset"> Outset</option>
+                </select>
+            </div>
+            <span> Ширина рамки: </span>
+            <div>
+                <input style="width: 40px;" type="number" value="0" name="borderWidth" oninput="setBorderImg()">
+            </div>
+            <span> Цвет рамки: </span>
+            <div>
+                <input type="color" value="#ffffff" name="borderImgColor" oninput="setBorderImg()">
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div style="flex-grow: 0"><img src="images/my_photo.jpg"></div>
+        <div class="info">
+            <img src="images/name.png" alt="Селина Ирина">
+            <hr>
+            <table>
+                <tr>
+                    <td>
+                        <i> День рождения: </i>
+                    </td>
+                    <td>
+                        ----------
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i> Город: </i>
+                    </td>
+                    <td>
+                        --------
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i> Моб. телефон: </i>
+                    </td>
+                    <td>
+                        -----------
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i> E-mail: </i>
+                    </td>
+                    <td>
+                        -----------
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i> Образование: </i>
+                    </td>
+                    <td>
+                        ----------
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class=extra_content>
+        <i> Любимые фильмы: </i>
+        <div class="new_line">
+            <div class=name>
+                Предложение
+                <div class=description>
+                    <div class=front>
+                        <img src="images/films/1.jpg">
+                    </div>
+                    <div class=back>
+                        Главная героиня фильма – ответственная начальница, которой грозит высылка в Канаду. Ради того,
+                        чтобы избежать ссылки в край озер, героиня готова на все – даже фиктивно выскочить замуж за
+                        своего молодого ассистента.
+                    </div>
+                </div>
+            </div>
+            <div class=name>
+                Прогулка
+                <div class=description>
+                    <div class=front>
+                        <img src="images/films/4.jpg">
+                    </div>
+                    <div class=back>
+                        Вы боитесь высоты? А можете представить себя идущим по натянутому канату на высоте более 400м
+                        без всякой страховки? История о том, как канатоходец Филипп Пети отважился совершить легендарный
+                        трюк - пройти без страховки по канату, натянутому между небоскребами в Нью-Йорке.
+                    </div>
+                </div>
+            </div>
+            <div class=name>
+                Зачарованная
+                <div class=description>
+                    <div class=front>
+                        <img src="images/films/5.jpg">
+                    </div>
+                    <div class=back>
+                        Юная девушка из мультипликационного мира влюбилась в прекрасного принца, чем немало разозлила
+                        его мачеху. С помощью черной магии королева отправляет несчастную в единственное место во
+                        Вселенной, где нет любви — современный Манхэттен.
+                    </div>
+                </div>
+            </div>
+            <div class=name>
+                Фокус
+                <div class=description>
+                    <div class=front>
+                        <img src="images/films/6.jpg">
+                    </div>
+                    <div class=back>
+                        История об опытном мошеннике, который влюбляется в девушку, делающую первые шаги на поприще
+                        нелегального отъема средств у граждан. Отношения становятся для них проблемой, когда
+                        обнаруживается, что романтика мешает их нечестному бизнесу.
+                    </div>
+                </div>
+            </div>
+            <div class=name>
+                Эта дурацкая любовь
+                <div class=description>
+                    <div class=front>
+                        <img src="images/films/7.jpg">
+                    </div>
+                    <div class=back>
+                        У Кола Уивера не жизнь, а мечта. Но когда он узнает, что жена изменила ему и хочет развода, его
+                        жизнь быстро рушится. Кол, который уже пару десятилетий не ходил на свидания, являет собой
+                        настоящего «лоха». Проводя все свое свободное время в баре в дурном расположении духа,
+                        несчастный Кол становится протеже обаятельного Джейкоба Палмера...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <i> Любимые сериалы: </i>
+        <div class="new_line">
+            <div class=name>
+                Друзья
+                <div class=description>
+                    <div class=front>
+                        <img src="images/series/1.jpg">
+                    </div>
+                    <div class=back>
+                        Главные герои - шестеро друзей - Рейчел, Моника, Фиби, Джоуи, Чендлер и Росс. Три девушки и три
+                        парня, которые дружат, живут по соседству, вместе убивают время и противостоят жестокой
+                        реальности, делятся своими секретами и иногда очень сильно влюбляются.
+                    </div>
+                </div>
+            </div>
+            <div class=name>
+                Бесстыжие
+                <div class=description>
+                    <div class=front>
+                        <img src="images/series/2.jpg">
+                    </div>
+                    <div class=back>
+                        Американский ремейк британского сериала, повествующий о взбалмошной многодетной семье Галлахеров
+                        и их соседях, которые веселятся, попадают в самые невероятные ситуации и пытаются выжить в этом
+                        мире всеми возможными средствами, но при этом как можно меньше работая.
+                    </div>
+                </div>
+            </div>
+            <div class=name>
+                Форс-мажоры
+                <div class=description>
+                    <div class=front>
+                        <img src="images/series/3.jpg">
+                    </div>
+                    <div class=back>
+                        Юрист-самоучка Майк Росс, выдающий себя за выпускника Гарварда, попадает на собеседование к
+                        лучшему адвокату Харви Спектру. Устав от скучных соискателей, Харви нанимает Майка: у парня
+                        врожденный талант. Так рождается один из самых неоднозначных, но, в то же время, и самых
+                        блестящих тандемов законников на Манхэттене.
+                    </div>
+                </div>
+            </div>
+            <div class=name>
+                Удивительная миссис Мейзел
+                <div class=description>
+                    <div class=front>
+                        <img src="images/series/4.jpg">
+                    </div>
+                    <div class=back>
+                        Действие разворачивается в Нью-Йорке 1958 года. В основе сюжета лежит история «примерной
+                        домохозяйки» Мириам Майзел, которая внезапно обнаруживает у себя скрытый талант к стендапу.
+                    </div>
+                </div>
+            </div>
+            <div class=name>
+                Скандал
+                <div class=description>
+                    <div class=front>
+                        <img src="images/series/5.jpg">
+                    </div>
+                    <div class=back>
+                        Специалист по связям с общественностью Оливия Поуп, ранее работавшая на президента США, создает
+                        свое антикризисное агентство, цель которого - устранять проблемы высокопоставленных клиентов до
+                        того, как они станут всеобщим достоянием
+                    </div>
+                </div>
+            </div>
+        </div>
+        <i> Любимые книги: </i>
+        <div class="new_line">
+            <div class=name>
+                Книжный вор
+                <div class=description>
+                    <div class=front>
+                        <img src="images/books/1.jpg">
+                    </div>
+                    <div class=back>
+                        Январь 1939 года. Германия. Страна, затаившая дыхание. Никогда еще у смерти не было столько
+                        работы. «Книжный вор» — недлинная история, в которой говорится: об одной девочке; о разных
+                        словах; об аккордеонисте; о разных фанатичных немцах; о еврейском драчуне; и о множестве краж.
+                        Это книга о силе слов и способности книг вскармливать душу.
+                    </div>
+                </div>
+            </div>
+            <div class=name>
+                Жутко громко и запредельно близко
+                <div class=description>
+                    <div class=front>
+                        <img src="images/books/2.jpg">
+                    </div>
+                    <div class=back>
+                        Роман Джонатана Сафрана Фоера, увидевший свет в 2005 году. Главный герой книги - девятилетний
+                        мальчик по имени Оскар Шелл, нашедший ключ в вазе, принадлежавшей его погибшему отцу.
+                        Вдохновленный этой находкой, Оскар начинает искать какую-либо информацию об этом ключе по всему
+                        Нью-Йорку.
+                    </div>
+                </div>
+            </div>
+            <div class=name>
+                Романтический эгоист
+                <div class=description>
+                    <div class=front>
+                        <img src="images/books/3.jpg">
+                    </div>
+                    <div class=back>
+                        Романтический эгоист - это "Лего из Эго": под маской героя то исповедуется сам автор, то
+                        наговаривает на себя выдуманный писатель, пресыщенный славой. Детали головоломки мелькают
+                        вперемешку с остроумными оценками нашей эпохи и ее героев на фоне смутного осознания
+                        надвигающегося краха.
+                    </div>
+                </div>
+            </div>
+            <div class=name>
+                Клуб бездомных мечтателей
+                <div class=description>
+                    <div class=front>
+                        <img src="images/books/4.jpg">
+                    </div>
+                    <div class=back>
+                        Трогательный роман взросления. Повествование идет от первого лица, в виде записок в дневнике,
+                        которые предназначены "Дорогому Другу". Его герой не знает, но все же доверяет ему.
+                        Главный герой является тихоней, на что повлияли те нелегкие обстоятельства, из-за чего у героя
+                        была депрессия. Но с появлением новых друзей его жизнь меняется.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer> 2018</footer>
+</div>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

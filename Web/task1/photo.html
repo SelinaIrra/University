@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> task1 </title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="fancybox/jquery.fancybox.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body class="background_zig_zag">
+	<div class = "container">
+		<header>
+			<div> <img src="images/photo.png"> </div>
+			<div class = "flex-menu">
+				<a href="index.html" class = "menu-item"> О себе </a>
+				<a href="photo.html" class = "menu-item"> Галерея </a>
+				<a href="#" id="menu" class = "menu-item"> Тема </a>
+			</div>
+		</header>
+		<div class = "settings" style="height: 150px">
+			<div style="width: inherit; text-align: right;">
+				<button class="btn_close"> [x] </button>
+			</div>
+			<div class = 'grid'> 
+			<span> Стиль шрифта: </span>
+			<div id='font'>
+				<select>
+				    <option value="Georgia"> Georgia </option>
+					<option value="Arial"> Arial </option>
+					<option value="'Arial Black'"> Arial Black </option>
+					<option value="'Comic Sans MS'"> Comic Sans MS </option>
+					<option value="'Courier New'"> Courier New </option>
+					<option value="'Times New Roman'"> Times New Roman </option>
+					<option value="'Trebuchet MS'"> Trebuchet MS </option>
+					<option value="Impact"> Impact </option>
+					<option value="Verdana"> Verdana </option>
+				</select>
+			</div>
+			<span> Стиль фона: </span>
+			<div id='background'>
+				<select>
+					<option value="background_zig_zag"> Зигзаг </option>
+					<option value="background_vertical_line"> Вертикальные линии </option>
+					<option value="background_horizontal_line"> Горизонтальные линии </option>
+					<option value="background_inclined_line"> Косые линии </option>
+					<option value="background_rombus"> Ромб </option>
+					<option value="background_small_rect"> Мини-квадрат </option>
+					<option value="background_big_rect"> Квадрат </option>
+					<option value="background_small_dots"> Мелкий горох </option>
+					<option value="background_big_dots"> Крупный горох </option>
+				</select>
+			</div>
+			<span> Цвет фона №1: </span>
+			<div>
+				<input type="color" value="#000000" name="color1" oninput="setBackgroundColor()">
+			</div>
+			<span> Цвет фона №2: </span>
+			<div>
+				<input type="color" value="#ffffff" name="color2" oninput="setBackgroundColor()">
+			</div>
+			<span> Цвет меню: </span>
+			<div>
+				<input type="color" value="#1e1e1e" name="headerColor" oninput="setHeaderColor()">
+			</div>
+		</div>
+		</div>
+		<div class="content_gallery"> 
+			<a class="fancyimage" rel="group" href="gallery/1.jpg"> 
+				<img class="img-responsive" src="gallery/1c.jpg"> 
+			</a> 
+			<a class="fancyimage" rel="group" href="gallery/0.jpg"> 
+				<img class="img-responsive" src="gallery/0c.jpg" /> 
+			</a> 
+			<a class="fancyimage" rel="group" href="gallery/14.jpg"> 
+				<img class="img-responsive" src="gallery/14c.jpg" /> 
+			</a> 
+			<a class="fancyimage" rel="group" href="gallery/2.jpg"> 
+				<img class="img-responsive" src="gallery/2c.jpg" /> 
+			</a> 
+			<a class="fancyimage" rel="group" href="gallery/5.jpg"> 
+				<img class="img-responsive" src="gallery/5c.jpg" /> 
+			</a> 
+			<a class="fancyimage" rel="group" href="gallery/6.jpg"> 
+				<img class="img-responsive" src="gallery/6c.jpg" /> 
+			</a>
+			<a class="fancyimage" rel="group" href="gallery/4.jpg"> 
+				<img class="img-responsive" src="gallery/4c.jpg" /> 
+			</a> 
+			<a class="fancyimage" rel="group" href="gallery/7.jpg"> 
+				<img class="img-responsive" src="gallery/7c.jpg" /> 
+			</a> 
+			<a class="fancyimage" rel="group" href="gallery/8.jpg"> 
+				<img class="img-responsive" src="gallery/8c.jpg" /> 
+			</a> 
+			<a class="fancyimage" rel="group" href="gallery/18.jpg"> 
+				<img class="img-responsive" src="gallery/18c.jpg" /> 
+			</a>
+			<a class="fancyimage" rel="group" href="gallery/9.jpg"> 
+				<img class="img-responsive" src="gallery/9c.jpg" /> 
+			</a>
+			<a class="fancyimage" rel="group" href="gallery/10.jpg"> 
+				<img class="img-responsive" src="gallery/10c.jpg" /> 
+			</a>  
+			<a class="fancyimage" rel="group" href="gallery/13.jpg"> 
+				<img class="img-responsive" src="gallery/13c.jpg" /> 
+			</a> 
+			<a class="fancyimage" rel="group" href="gallery/12.jpg"> 
+				<img class="img-responsive" src="gallery/12c.jpg" /> 
+			</a>
+			<a class="fancyimage" rel="group" href="gallery/3.jpg"> 
+				<img class="img-responsive" src="gallery/3c.jpg" /> 
+			</a>
+			<a class="fancyimage" rel="group" href="gallery/16.jpg"> 
+				<img class="img-responsive" src="gallery/16c.jpg" /> 
+			</a>
+			<a class="fancyimage" rel="group" href="gallery/15.jpg"> 
+				<img class="img-responsive" src="gallery/15c.jpg" /> 
+			</a>
+			<a class="fancyimage" rel="group" href="gallery/17.jpg"> 
+				<img class="img-responsive" src="gallery/17c.jpg" /> 
+			</a>  
+		</div> 
+		<footer> 2018 </footer>
+	</div>
+	<script type="text/javascript" src="fancybox/jquery.fancybox.pack.js"></script>
+	<script type="text/javascript"> 
+		$(document).ready(function() { 
+			$("a.fancyimage").fancybox(); 
+		}); 
+	</script> 
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
