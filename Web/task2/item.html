@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="http://allfont.ru/allfont.css?fonts=acquest-script" rel="stylesheet" type="text/css" />
+    <title> task2 </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<div class = container>
+    <header>
+        <div class="header_tape"></div>
+        <div class="line_search">
+            <a href="user.html" id="btn_person" style="visibility: hidden;" class = "btn_modal_box"> </a>
+            <img id="icon_person" class="icons_main" style="visibility: hidden;" src="images/icon_person.png">
+            <input id="btn_enter" type='button' action="enter" class = "btn_modal_box"
+                   onclick="openBoxForEnter(event)" value="Вход">
+            <img id="icon_enter" onclick="openBoxForEnter(event)" action="enter" class="icons_main"
+                 src="images/icon_enter.png">
+        </div>
+    </header>
+    <div class="input_search">
+        <input class="in_search" type="text" name="">
+        <button class="btn_search"></button>
+    </div>
+    <img class = 'logo' src="images/logo.png">
+    <nav class="main_menu">
+        <div style="grid-area: start;" class="menu_items">
+            <a style="width: 100px" href="index.html"> Главная </a>
+            <a style="width: 100px" href="items.html"> Каталог </a>
+        </div>
+        <div style="grid-area: end;" class="menu_items">
+            <a style="width: 100px" href="#"> О заказе</a>
+            <a style="width: 100px" href="#"> Контакты </a>
+        </div>
+    </nav>
+    <dialog class="box_for_enter">
+        <button id='close' class="btn_modal_box" onclick="close_box()"> X </button>
+        <p>Вход</p>
+        <form style="margin-left: 25px;" action="#" method="post">
+            <table style="border-spacing: 10px 2px;">
+                <tr>
+                    <td> Логин </td>
+                    <td> <input  id="input_log" style="font-size: 12pt;" type="text" required></td>
+                    <td rowspan = "2"> <input type='button' class="btn_enter" onclick="enter()"> </td> <!--type="submit"-->
+                </tr>
+                <tr>
+                    <td> Пароль </td>
+                    <td> <input id="input_pass" style="font-size: 12pt;" type="password" required> </td>
+                </tr>
+            </table>
+        </form>
+        <hr>
+        <p>Регистрация</p>
+        <form style="margin-left: 25px;" action="#" method="post">
+            <table style="border-spacing: 10px 2px;">
+                <tr>
+                    <td> E-mail </td>
+                    <td> <input style="font-size: 12pt;" type="email" required
+                                pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"> </td>
+                    <td rowspan = "3"> <input type="submit" class="btn_reg" value=""> </td>
+                </tr>
+                <tr>
+                    <td> Логин </td>
+                    <td> <input style="font-size: 12pt;" type="text"
+                                title="логин должен состоять из 2-20 символов (буквы, цифры)"
+                                required pattern="[A-zА-я0-9еЁ]{2,20}"> </td>
+                </tr>
+                <tr>
+                    <td> Пароль </td>
+                    <td> <input style="font-size: 12pt;" type="password"
+                                title="пароль должен состоять из 8-20 символов (буквы, цифры, специальные символы !$-_.?)"
+                                required pattern="[A-z0-9!$-_.?]{8,20}"> </td>
+                </tr>
+            </table>
+        </form>
+    </dialog>
+    <main>
+        <div class="view_product">
+            <div>
+                <button id="btn_next"></button>
+                <img class="product_img">
+                <button id="btn_prev"></button>
+            </div>
+            <div>
+                <h3></h3>
+                <table>
+                    <tr>
+                        <td>Категория:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Размеры:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Цена:</td>
+                        <td></td>
+                    </tr>
+                </table>
+                <button id="add_to_cart"> Добавить в корзину </button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        Интернет-магазин handmade товаров
+        <br> TwinkleBox
+        <br> 2018
+    </footer>
+</div>
+<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="script_items.js"></script>
+<script>
+    clearInterval(slider);
+    currentProductId = Math.round(Math.random() * (23 - 1) + 1);
+    fillProductInf(currentProductId);
+</script>
+</body>
+</html>
